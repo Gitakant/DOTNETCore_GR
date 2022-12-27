@@ -1,0 +1,50 @@
+﻿@page
+@model RazorPageIntro.Pages.Book.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>BookCollections</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="BookCollections.ID" />
+            <div class="form-group">
+                <label asp-for="BookCollections.Title" class="control-label"></label>
+                <input asp-for="BookCollections.Title" class="form-control" />
+                <span asp-validation-for="BookCollections.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookCollections.ReleaseDate" class="control-label"></label>
+                <input asp-for="BookCollections.ReleaseDate" class="form-control" />
+                <span asp-validation-for="BookCollections.ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookCollections.AuthorName" class="control-label"></label>
+                <input asp-for="BookCollections.AuthorName" class="form-control" />
+                <span asp-validation-for="BookCollections.AuthorName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookCollections.Rating" class="control-label"></label>
+                <input asp-for="BookCollections.Rating" class="form-control" />
+                <span asp-validation-for="BookCollections.Rating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
